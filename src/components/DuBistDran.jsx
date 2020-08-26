@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center"
     },
     text: {
-        fontSize: "2em"
+        fontSize: "5em"
     }
 }));
 
@@ -22,7 +22,7 @@ export const DuBistDran = () => {
     const classes =useStyles();
     return (
         <Box className={classes.center} style={{height: "100vh"}}>
-            <h1>Civan</h1>
+            <h1 className={classes.text}>Eyleen</h1>
         </Box>
     )
 }
