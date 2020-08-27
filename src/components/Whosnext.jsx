@@ -104,7 +104,7 @@ export const Whosnext = () => {
                                                                                         src="./images/rightArrow.svg"
                                                                                         alt=""/></Box>
             </Box>
-            <Box style={{height: "40vh", display: "flex", alignItems: "flex-end", marginTop: "-1em"}}>  Aktuelle Kalenderwoche: {week} </Box>
+            <Box style={{height: "30vh", display: "flex", alignItems: "flex-end", marginTop: "-1em"}}>  Aktuelle Kalenderwoche: {week} </Box>
         </Box>
     )
 }
