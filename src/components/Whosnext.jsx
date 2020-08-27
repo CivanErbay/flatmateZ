@@ -56,17 +56,18 @@ export const Whosnext = () => {
     const [weekDisplayIndex, setWeekDisplayIndex] = useState(3)
 
     console.log(currentPersonIndex)
-
+    console.log(weekDisplayIndex)
     const nextWeekButton = () => {
-        if (currentPersonIndex >= 4) {
+        if (currentPersonIndex === 4) {
             setCurrentPersonIndex(0)
+            setWeekDisplayIndex(weekDisplayIndex+1)
         } else {
             setCurrentPersonIndex(currentPersonIndex + 1)
             setWeekDisplayIndex(weekDisplayIndex + 1)
         }
     }
     const lastWeekButton = () => {
-        if (currentPersonIndex <= 0) {
+        if (currentPersonIndex === 0) {
             setCurrentPersonIndex(4)
             setWeekDisplayIndex(weekDisplayIndex - 1)
         } else {
@@ -89,13 +90,17 @@ export const Whosnext = () => {
     return (
         <Box className={classes.centerColumn}>
             <Box style={{height: "40vh",width: "100%"}} className={classes.centerColumn}>
-                <h2 style={{fontSize: "2em", padding: "1em", backgroundColor: "#61dafb", color: "#282c34", borderRadius: "20px"}}>{weekDisplayIndex > 6 || weekDisplayIndex < 0 ? "Übertreib ma nich" : currWeek[weekDisplayIndex]}</h2>
+                <h2 style={{fontSize: "2em", padding: "1em", backgroundColor: "#61dafb", color: "#282c34", borderRadius: "20px",  boxShadow: "0 -2px 10px rgba(0, 0, 0, 1)"}}>
+                    {weekDisplayIndex > 6 || weekDisplayIndex < 0 ? "Übertreib ma nich" : currWeek[weekDisplayIndex]}</h2>
             </Box>
+
             <Box className={classes.center} style={{height: "20vh",width: "100%"}}>
                 <Box onClick={lastWeekButton} className={classes.buttonStyleLeft}><img style={{height: "20px"}}
                                                                                        src="./images/leftArrow.svg"
-                                                                                       alt=""/> </Box>
+                                                                                       alt=""/>
+                </Box>
                 <h1 className={classes.text}>{currentPutzperson}</h1>
+
                 <Box onClick={nextWeekButton} className={classes.buttonStyleRight}><img style={{height: "20px"}}
                                                                                         src="./images/rightArrow.svg"
                                                                                         alt=""/></Box>

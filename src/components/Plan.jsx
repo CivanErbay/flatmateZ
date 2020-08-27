@@ -29,8 +29,9 @@ const useStyles = makeStyles((theme) => ({
         <Box className={classes.center} style={{height: "100vh"}}>
             <Box onClick={routeNextCleanPerson}>
             <img style={{height: "20vh"}} src="./images/cleaning.svg" alt="clean"/>
-            </Box>
+
             <h2 className={classes.text}>Sömmering bleibt sauber!</h2>
+            </Box>
         </Box>
     )
 }
