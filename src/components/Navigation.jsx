@@ -6,7 +6,7 @@ import  {
 
 } from "react-router-dom";
 import Plan from "./Plan";
-import {DuBistDran} from "./DuBistDran";
+import {Whosnext} from "./Whosnext";
 
 
 export const Navigation = () => {
@@ -15,7 +15,7 @@ export const Navigation = () => {
      <Router>
          <Switch>
              <Route path="/whosnext" exact>
-            <DuBistDran/>
+            <Whosnext/>
              </Route>
              <Route path="/" exact>
                  <Plan/>

@@ -5,8 +5,8 @@ import {makeStyles} from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
     center: {
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+
+        justifyContent: "space-around",
         alignItems: "center"
     },
     text: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const DuBistDran = () => {
+export const Whosnext = () => {
 
     const [currentPutzperson, setCurrentPutzperson] = useState("")
     const mitglieder = ["Paul", "Eyleen", "Anthea", "Civan", "Paco"]
@@ -32,7 +32,9 @@ export const DuBistDran = () => {
     const classes = useStyles();
     return (
         <Box className={classes.center} style={{height: "100vh"}}>
+            <Box><img style={{height: "25px"}} src="./images/leftArrow.svg" alt=""/> </Box>
             <h1 className={classes.text}>{currentPutzperson}</h1>
+            <Box><img style={{height: "25px"}} src="./images/rightArrow.svg" alt=""/></Box>
         </Box>
     )
 }
