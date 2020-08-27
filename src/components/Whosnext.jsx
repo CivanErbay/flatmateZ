@@ -35,11 +35,10 @@ const useStyles = makeStyles((theme) => ({
 
 export const Whosnext = () => {
     const mitglieder = ["Eyleen", "Paco", "Anthea", "Paul", "Civan"]
-
+    let now = new Date();
+    let onejan = new Date(now.getFullYear(), 0, 0);
+    let week = Math.ceil((((now - onejan) / 86400000) + onejan.getDay() + 1) / 7);
     const putzPlanCalc = () => {
-        let now = new Date();
-        let onejan = new Date(now.getFullYear(), 0, 0);
-        let week = Math.ceil((((now - onejan) / 86400000) + onejan.getDay() + 1) / 7);
         return week % mitglieder.length
     }
 
@@ -105,7 +104,7 @@ export const Whosnext = () => {
                                                                                         src="./images/rightArrow.svg"
                                                                                         alt=""/></Box>
             </Box>
-            <Box style={{height: "40vh"}}/>
+            <Box style={{height: "40vh", display: "flex", alignItems: "flex-end", marginTop: "-1em"}}>  Aktuelle Kalenderwoche: {week} </Box>
         </Box>
     )
 }
