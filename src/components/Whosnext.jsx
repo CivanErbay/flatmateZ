@@ -87,13 +87,11 @@ export const Whosnext = () => {
 
     const classes = useStyles();
     return (
-        <Box className={classes.centerColumn} style={{height: "100vh"}}>
-            <h2 style={{
-                fontSize: "2em",
-                position: "absolute",
-                marginBottom: "10em"
-            }}>{weekDisplayIndex > 6 || weekDisplayIndex < 0 ? "Übertreib ma nich" : currWeek[weekDisplayIndex]}</h2>
-            <Box className={classes.center}>
+        <Box className={classes.centerColumn}>
+            <Box style={{height: "40vh",width: "100%"}} className={classes.centerColumn}>
+                <h2 style={{fontSize: "2em", padding: "1em", backgroundColor: "#61dafb", color: "#282c34", borderRadius: "20px"}}>{weekDisplayIndex > 6 || weekDisplayIndex < 0 ? "Übertreib ma nich" : currWeek[weekDisplayIndex]}</h2>
+            </Box>
+            <Box className={classes.center} style={{height: "20vh",width: "100%"}}>
                 <Box onClick={lastWeekButton} className={classes.buttonStyleLeft}><img style={{height: "20px"}}
                                                                                        src="./images/leftArrow.svg"
                                                                                        alt=""/> </Box>
@@ -102,6 +100,7 @@ export const Whosnext = () => {
                                                                                         src="./images/rightArrow.svg"
                                                                                         alt=""/></Box>
             </Box>
+            <Box style={{height: "40vh"}}/>
         </Box>
     )
 }
