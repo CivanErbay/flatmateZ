@@ -6,29 +6,26 @@ import { ToDoWrapper } from "./ToDoWrapper";
 import firebase from "../utils/firebase";
 
 export const Navigation = () => {
-    
-    const [todoData, setTodoData] = useState([])
+  const [todoData, setTodoData] = useState([]);
 
   useEffect(() => {
     const todoRef = firebase.database().ref("Todo");
     todoRef.on("value", (snapshot) => {
-    const todos = snapshot.val();
+      const todos = snapshot.val();
+      const tempList = [];
 
-    const tempList = [];
-    for (let todo in todos) {
-        tempList.push(todos[todo])
-    }
-    setTodoData(tempList) 
+      for (let id in todos) {
+        tempList.push({ id, ...todos[id] });
+      }
+      setTodoData(tempList);
     });
   }, []);
-
-
 
   return (
     <Router>
       <Switch>
         <Route path="/todo" exact>
-          <ToDoWrapper data={todoData}/>
+          <ToDoWrapper data={todoData} />
         </Route>
         <Route path="/whosnext" exact>
           <Whosnext />
