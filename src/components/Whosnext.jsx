@@ -37,7 +37,9 @@ export const Whosnext = () => {
     const mitglieder = ["Eyleen", "Paco", "Anthea", "Paul", "Civan"]
     let now = new Date();
     let onejan = new Date(now.getFullYear(), 0, 0);
+
     let week = Math.ceil((((now - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+
     const putzPlanCalc = () => {
         return week % mitglieder.length
     }
@@ -54,8 +56,7 @@ export const Whosnext = () => {
     const [currentPersonIndex, setCurrentPersonIndex] = useState(putzPlanCalc())
     const [weekDisplayIndex, setWeekDisplayIndex] = useState(3)
 
-    console.log(currentPersonIndex)
-    console.log(weekDisplayIndex)
+
     const nextWeekButton = () => {
         if (currentPersonIndex === 4) {
             setCurrentPersonIndex(0)
@@ -77,14 +78,12 @@ export const Whosnext = () => {
 
     useEffect(() => {
         setCurrentPutzperson(mitglieder[currentPersonIndex])
-
     }, [currentPersonIndex])
 
-    useEffect(() => {
+ /*   useEffect(() => {
         setCurrentPutzperson(mitglieder[putzPlanCalc()])
     }, [])
-
-
+*/
     const classes = useStyles();
     return (
         <Box className={classes.centerColumn}>
