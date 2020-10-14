@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
+import BackButton from "./BackButton";
 
 const useStyles = makeStyles((theme) => ({
     center: {
@@ -103,7 +104,9 @@ export const Whosnext = () => {
                                                                                         src="./images/rightArrow.svg"
                                                                                         alt=""/></Box>
             </Box>
-            <Box style={{height: "20vh", display: "flex", alignItems: "flex-end", marginTop: "-1em"}}>  Aktuelle Kalenderwoche: {week} </Box>
+            
+            <Box style={{height: "10vh", display: "flex", alignItems: "flex-end", marginTop: "-1em"}}>  Aktuelle Kalenderwoche: {week} </Box>
+            <BackButton></BackButton>
         </Box>
     )
 }
