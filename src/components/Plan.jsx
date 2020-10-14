@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
  export default function Plan () {
 
+
      const classes = useStyles();
      const history = useHistory();
     const routeNextCleanPerson = () => {

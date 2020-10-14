@@ -1,0 +1,19 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+
+    h2{
+        font-size: 4em;
+    }
+    &__list-div {
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    }
+
+}

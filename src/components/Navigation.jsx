@@ -7,6 +7,7 @@ import  {
 } from "react-router-dom";
 import Plan from "./Plan";
 import {Whosnext} from "./Whosnext";
+import {ToDoWrapper} from "./ToDoWrapper";
 
 
 export const Navigation = () => {
@@ -14,6 +15,9 @@ export const Navigation = () => {
 
      <Router>
          <Switch>
+            <Route path="/todo" exact>
+                 <ToDoWrapper/>
+             </Route>
              <Route path="/whosnext" exact>
             <Whosnext/>
              </Route>
