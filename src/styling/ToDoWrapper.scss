@@ -1,21 +1,32 @@
 .todo-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 
-    h2{
-        font-size: 4em;
+  h2 {
+    font-size: 4em;
+  }
+  &__list-div {
+    &__grid {
+      width: 70vw;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .todo-container {
     &__list-div {
-        
-        ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 2em;
-            color: aliceblue;
-        }
+      &__grid {
+        width: 70vw;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+      }
     }
-
+  }
 }
