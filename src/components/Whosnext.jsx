@@ -78,7 +78,7 @@ export const Whosnext = () => {
 
     useEffect(() => {
         setCurrentPutzperson(mitglieder[currentPersonIndex])
-    }, [currentPersonIndex])
+    }, [currentPersonIndex, mitglieder])
 
  /*   useEffect(() => {
         setCurrentPutzperson(mitglieder[putzPlanCalc()])

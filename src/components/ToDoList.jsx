@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const ToDoList = ({List}) => {
+export const ToDoList = ({todoList}) => {
     return (
         <>
-        {List.map(todo => 
-            <li key={todo}>{todo}</li>)}
+        {todoList && todoList.map(todo => 
+            <li key={todo.singleTodo}>{todo.singleTodo}</li>)}
         </>
     )
 }

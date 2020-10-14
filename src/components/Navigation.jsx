@@ -7,21 +7,28 @@ import firebase from "../utils/firebase";
 
 export const Navigation = () => {
     
-    const [todoData, setTodoData] = useState(undefined)
+    const [todoData, setTodoData] = useState([])
 
   useEffect(() => {
     const todoRef = firebase.database().ref("Todo");
     todoRef.on("value", (snapshot) => {
-     setTodoData(snapshot.val());
+    const todos = snapshot.val();
+
+    const tempList = [];
+    for (let todo in todos) {
+        tempList.push(todos[todo])
+    }
+    setTodoData(tempList) 
     });
   }, []);
 
   console.log(todoData)
+
   return (
     <Router>
       <Switch>
         <Route path="/todo" exact>
-          <ToDoWrapper/>
+          <ToDoWrapper data={todoData}/>
         </Route>
         <Route path="/whosnext" exact>
           <Whosnext />
