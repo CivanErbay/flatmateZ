@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import '../styling/ToDoWrapper.scss'
 import {ToDoList} from './ToDoList'
+import firebase from '../utils/firebase.js'
 
-export const ToDoWrapper = () => {
+export const ToDoWrapper = ({data}) => {
 
     const [singleTodo, setSingleTodo] = useState("")
     const [todoList, setTodoList] = useState([])
@@ -11,17 +12,24 @@ export const ToDoWrapper = () => {
         setSingleTodo(e.target.value);
     }
 
+     //for Enter-Key
     const handleKeyPress = (event) => {
         if(event.key === 'Enter'){
             setTodoList(todoList.concat(singleTodo))
         }
       }
+
+      //for Button
     const addItem = () => {
         setTodoList(todoList.concat(singleTodo))
+        const todoRef = firebase.database().ref("Todo");
+        const todo = {
+            singleTodo, 
+            complete: false,
+        };
+        todoRef.push(todo)
     }
 
-    console.log(singleTodo)
-    console.log(todoList)
     return (
         <div className="todo-container">
         <h2>Aufgabenliste</h2>
