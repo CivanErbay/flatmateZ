@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import '../styling/ToDoWrapper.scss'
+import {ToDoList} from './ToDoList'
 
 export const ToDoWrapper = () => {
 
@@ -24,9 +25,7 @@ export const ToDoWrapper = () => {
         <div className="todo-container__list-div">
             <input value={singleTodo} onChange={handleChange} onKeyPress={handleKeyPress} type="text"/>
             <ul>
-                {todoList.map(todo => 
-                    <li key={todo}>{todo}</li>
-                )}
+                <ToDoList List={todoList}></ToDoList>
             </ul>
         </div>
         </div>
