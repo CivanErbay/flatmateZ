@@ -1,5 +1,6 @@
 import React from 'react'
 import { useHistory} from "react-router-dom";
+import '../styling/BackButton.scss'
 
 export default function BackButton() {
     
@@ -12,7 +13,7 @@ export default function BackButton() {
 
     return (
         <div>
-            <button onClick={routeBack}>Back</button>
+            <button className="back-button" onClick={routeBack}>Back</button>
         </div>
     )
 }
