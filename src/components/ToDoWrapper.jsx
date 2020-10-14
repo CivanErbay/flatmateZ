@@ -16,6 +16,9 @@ export const ToDoWrapper = () => {
             setTodoList(todoList.concat(singleTodo))
         }
       }
+    const addItem = () => {
+        setTodoList(todoList.concat(singleTodo))
+    }
 
     console.log(singleTodo)
     console.log(todoList)
@@ -24,6 +27,7 @@ export const ToDoWrapper = () => {
         <h2>Aufgabenliste</h2>
         <div className="todo-container__list-div">
             <input value={singleTodo} onChange={handleChange} onKeyPress={handleKeyPress} type="text"/>
+            <button onClick={addItem}>Add</button>
             <ul>
                 <ToDoList List={todoList}></ToDoList>
             </ul>

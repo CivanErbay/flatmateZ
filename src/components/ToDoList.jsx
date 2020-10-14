@@ -4,7 +4,7 @@ export const ToDoList = ({List}) => {
     return (
         <>
         {List.map(todo => 
-            <li>{todo}</li>)}
+            <li key={todo}>{todo}</li>)}
         </>
     )
 }
