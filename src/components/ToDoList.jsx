@@ -7,7 +7,7 @@ export const ToDoList = ({ todoList }) => {
       {todoList &&
         todoList.map((todo) => (
           <li key={todo.singleTodo}>
-            <div style={{border: "solid"}}>
+            <div>
               <p>{todo.singleTodo}</p>
             </div>
           </li>
