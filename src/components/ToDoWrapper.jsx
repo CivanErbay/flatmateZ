@@ -41,11 +41,12 @@ export const ToDoWrapper = ({data}) => {
         <div className="todo-container__list-div">
             <input value={singleTodo} onChange={handleChange} onKeyPress={handleKeyPress} type="text"/>
             <button onClick={addItem}>Add</button>
-            <BackButton></BackButton>
+         
             <ul>
                 <ToDoList todoList={data}></ToDoList>
             </ul>
         </div>
+        <BackButton></BackButton>
         </div>
     )
 }

@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
     },
     text: {
         fontSize: "2em",
-        margin: "0"
+        margin: "0",
+        marginTop: "10px"
     }
 }));
 
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
             </Box>
             <Box className="routing-box" m={5} onClick={routeTodo}>
             <img style={{height: "20vh"}} src="./images/improvement.svg" alt="clean"/>
-            <h2 className={classes.text}>Evolution</h2>
+            <h2 className={classes.text}>Sövolution</h2>
             </Box>
         </Box>
     )

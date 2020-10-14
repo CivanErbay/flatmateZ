@@ -106,7 +106,7 @@ export const Whosnext = () => {
             </Box>
             
             <Box style={{height: "10vh", display: "flex", alignItems: "flex-end", marginTop: "-1em"}}>  Aktuelle Kalenderwoche: {week} </Box>
-            <BackButton></BackButton>
+            <BackButton style={{marginTop: "1.5em"}}></BackButton>
         </Box>
     )
 }
