@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 import {makeStyles} from "@material-ui/core/styles";
 import { useHistory} from "react-router-dom";
+import '../styling/Plan.scss'
 
 
 
@@ -14,15 +15,17 @@ const useStyles = makeStyles((theme) => ({
         cursor: "pointer"
     },
     text: {
-        fontSize: "2em"
+        fontSize: "2em",
+        margin: "0"
     }
 }));
 
  export default function Plan () {
 
 
-     const classes = useStyles();
-     const history = useHistory();
+    const classes = useStyles();
+    const history = useHistory();
+
     const routeNextCleanPerson = () => {
         let path = `/whosnext`;
         history.push(path)
@@ -33,13 +36,13 @@ const useStyles = makeStyles((theme) => ({
     }
     return (
         <Box className={classes.center} style={{height: "100vh"}}>
-            <Box onClick={routeNextCleanPerson}>
+            <Box className="routing-box" onClick={routeNextCleanPerson}>
             <img style={{height: "20vh"}} src="./images/cleaning.svg" alt="clean"/>
             <h2 className={classes.text}>Sömmering bleibt sauber!</h2>
             </Box>
-            <Box onClick={routeTodo}>
+            <Box className="routing-box" m={5} onClick={routeTodo}>
             <img style={{height: "20vh"}} src="./images/improvement.svg" alt="clean"/>
-            <h2 className={classes.text}>Sömmering - Evolution</h2>
+            <h2 className={classes.text}>Evolution</h2>
             </Box>
         </Box>
     )

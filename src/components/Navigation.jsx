@@ -22,7 +22,7 @@ export const Navigation = () => {
     });
   }, []);
 
-  console.log(todoData)
+
 
   return (
     <Router>
